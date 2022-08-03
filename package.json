@@ -14,6 +14,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@hmscore/cordova-plugin-hms-iap": "^6.4.0-301",
+    "com.onurkenis.cordovaservicechecker": "github:onurkenis/cordova-service-checker",
     "cordova-android": "^10.1.2"
   },
   "cordova": {
@@ -21,7 +22,8 @@
       "android"
     ],
     "plugins": {
-      "cordova-plugin-hms-iap": {}
+      "cordova-plugin-hms-iap": {},
+      "com.onurkenis.cordovaservicechecker": {}
     }
   }
 }

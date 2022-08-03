@@ -31,7 +31,22 @@ function onDeviceReady() {
 
 function onClickIAP(e) {
     console.log("IAO started - oliver404");
-    initIAP();
+    cordova.plugins.CordovaServiceChecker.isHmsAvailable()
+        .then(onResultHmsAvailable)
+        .catch();
+}
+
+function onResultHmsAvailable(result) {
+    if (result) {
+        alert('Starting IAP HMS...');
+        initIAP();
+    }
+    else alert('Your cellphone dont have Huawei Mibile Services :( !!!');
+    
+}
+
+function onErrorHmsAvailable(error) {
+    alert('ERROR: Can\'t check if HMS is available :O ');
 }
 
 async function initIAP () {
